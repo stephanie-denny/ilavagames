@@ -1,40 +1,20 @@
-# Yellowcake
+# iLavaGames
 
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-[![dependencies](https://david-dm.org/jinksi/netlify-cms-react-starter.svg?style=flat-square)](https://david-dm.org/jinksi/gatsbro)
 
-An opinionated starter project for creating lightning-fast websites with [Gatsby](https://gatsbyjs.org) v2 and [Netlify CMS](https://netlifycms.org) v2.
+A marketing website for iLavaGames using [Gatsby](https://gatsbyjs.org) v2 and [Netlify CMS](https://netlifycms.org) v2.
 
 - **[Gatsby](https://gatsbyjs.org)** static site generator
 - **[Netlify CMS](https://github.com/netlify/netlify-cms)** for content management
 
 ## See also
 
-[Netlify CMS Docs](https://www.netlifycms.org/docs/)  
+[Netlify CMS Docs](https://www.netlifycms.org/docs/)
 [Netlify CMS Repo](https://github.com/netlify/netlify-cms)
-
-## Get going
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/thriveweb/yellowcake&stack=cms)
-
-1.  Hit the **Deploy to Netlify** button. This will:
-
-- Clone the repo into your Github account
-- Create you a new project on Netlify, build & deploy
-
-1.  Once your Netlify project has been created, check a couple of settings:
-
-- Enable **Identity**
-- Change **Registration Preferences** to **Invite Only**
-- Enable **Git Gateway**
-
-1.  Invite users (probably yourself) to enable admin access
-
-- Open the **Identity** tab and hit **Invite Users**
 
 ## Show me the CMS!
 
-The CMS lives at [\_\_YOUR_SITE_NAME\_\_.netlify.com/admin](https://__YOUR_SITE_NAME__.netlify.com/admin).
+The CMS lives at [https://keen-sammet-2a8ce7.netlify.com/admin](https://keen-sammet-2a8ce7.netlify.com/admin).
 
 ## Developing
 
@@ -42,11 +22,11 @@ The CMS lives at [\_\_YOUR_SITE_NAME\_\_.netlify.com/admin](https://__YOUR_SITE_
 
 1.  Install dependencies
 
-`yarn` or `npm install`
+`yarn`
 
 1.  Run the development server
 
-`yarn start` or `npm run start`
+`yarn start`
 
 If you are adding or editing content locally in the CMS, a couple of things to note:
 

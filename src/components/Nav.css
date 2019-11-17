@@ -1,9 +1,8 @@
 .Nav {
-  background: white;
+  background: var(--primaryDark);
   position: sticky;
   top: 0;
   z-index: 2;
-  border-bottom: 1px solid var(--lightGrey);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.025);
 }
 
@@ -47,7 +46,7 @@
 .NavLink:hover,
 .NavLink.active,
 .NavLink:focus {
-  color: var(--primary);
+  color: var(--secondary);
   border-bottom-color: currentColor;
 }
 
@@ -65,8 +64,8 @@
   position: absolute;
   top: calc(50% - 0.2rem);
   right: 1rem;
-  border-bottom: 2px solid var(--darkGrey);
-  border-right: 2px solid var(--darkGrey);
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
   display: block;
   height: 0.8rem;
   width: 0.8rem;
@@ -79,7 +78,7 @@
   top: 100%;
   left: 0;
   width: auto;
-  background: white;
+  background: var(--primaryDark);
   /* opacity: 0; */
   max-height: 0;
   overflow: hidden;
@@ -112,6 +111,10 @@
     display: block !important;
     margin-left: auto;
     z-index: 1;
+    color: white;
+  }
+  .Nav-active .Nav--MenuButton {
+    color: var(--primary);
   }
   .Nav .Logo {
     z-index: 1;
@@ -148,6 +151,7 @@
   .Nav .NavLink {
     font-size: 2.5rem;
     font-weight: 300;
+    color: var(--primary);
   }
 
   .Nav .NavLink:nth-of-type(2) {
