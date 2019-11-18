@@ -2,7 +2,7 @@
   publish = "public"
   command = "npm run build"
 [context.branch-deploy]
-  command = "npm build"
+  command = "npm run-script build"
 [context.branch-deploy.environment]
   NODE_ENV = "development"
 [build.environment]
