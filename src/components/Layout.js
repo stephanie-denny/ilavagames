@@ -6,6 +6,7 @@ import Nav from './Nav'
 import Footer from './Footer'
 
 import 'modern-normalize/modern-normalize.css'
+import '../../node_modules/codyhouse-framework/main/assets/css/style.scss'
 import './globalStyles.css'
 
 export default ({ children, meta, title }) => {
@@ -72,12 +73,12 @@ export default ({ children, meta, title }) => {
               {...data.settingsYaml}
             />
 
-
             <Nav subNav={subNav} />
 
             <Fragment>{children}</Fragment>
 
             <Footer />
+            <script src="../node_modules/codyhouse-framework/main/assets/js/util.js"></script>
           </Fragment>
         )
       }}
