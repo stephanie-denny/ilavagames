@@ -1,7 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import PageHeader from '../components/PageHeader'
 import Content from '../components/Content.js'
 import Layout from '../components/Layout.js'
 import Accordion from '../components/Accordion'
@@ -22,19 +21,19 @@ export const ComponentsPageTemplate = ({
          videoTitle,
          accordion,
          body,
-         gallery
+         gallery,
+         heroLabel
        }) => (
          <main>
-           <DiagonalHero
-             title={title}
-             subtitle={subtitle}
-             backgroundImage={featuredImage}
-           />
-           <PageHeader
-             title={title}
-             subtitle={subtitle}
-             backgroundImage={featuredImage}
-           />
+           <section className="section">
+             <DiagonalHero
+               title={title}
+               subtitle={subtitle}
+               backgroundImage={featuredImage}
+               textColor="light"
+               heroLabel={heroLabel}
+             />
+           </section>
            <section className="section">
              <div className="container">
                <Content source={section1} />
@@ -97,6 +96,7 @@ export const pageQuery = graphql`
         title
         template
         subtitle
+        heroLabel
         featuredImage
         section1
         section2

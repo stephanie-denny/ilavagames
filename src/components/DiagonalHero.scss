@@ -16,14 +16,20 @@ Usage: codyhouse.co/license
 .hero--diagonal-bottom {
   position: relative;
   background-color: transparent;
-  color: black;
-
+  &.light,
+  &.light h1 {
+    color: white;
+  }
+  &.dark,
+  &.dark h1 {
+    color: black;
+  }
   &::before {
     content: '';
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: var(--color-bg);
+    background-image: var(--diagonalBgImg);
     left: 0;
     top: 0;
     // if bg = img

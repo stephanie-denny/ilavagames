@@ -2,8 +2,9 @@
 template: ComponentsPage
 slug: components
 title: Components Page
-featuredImage: 'https://ucarecdn.com/df0dc650-6938-412f-aefb-2019d2349e13/'
+featuredImage: 'https://ucarecdn.com/2fdee313-7fed-4ff9-8621-c02d54b6bf8c/'
 subtitle: This is the components page subtitle.
+heroLabel: This is a diagonal Header
 section1: >-
   ## This is a container component
 
