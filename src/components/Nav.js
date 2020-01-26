@@ -66,6 +66,9 @@ export class Navigation extends Component {
                     : ''
                 }`}
                 onClick={() => this.toggleSubNav('posts')}
+                onKeyDown={() => this.toggleSubNav('posts')}
+                role="link"
+                tabIndex={0}
               >
                 Blog
               </span>

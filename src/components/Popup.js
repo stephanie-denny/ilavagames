@@ -21,19 +21,26 @@ class Popup extends Component {
       <Fragment>
         <div className="taCenter">
           <h3> Simple Popup Example</h3>
-          <div className="Button" onClick={this.togglePopup.bind(this)}>
+          <button
+            className="Button"
+            onClick={this.togglePopup.bind(this)}
+            onKeyDown={this.handleClick}
+          >
             Click To Launch Popup
-          </div>
+          </button>
         </div>
 
         {this.state.showPopup ? (
           <div className="Popup-Overlay">
-            <div
+            <button
               className="Popup-Background"
               onClick={this.togglePopup.bind(this)}
-            ></div>
+            ></button>
             <div className="Popup-Inner">
-              <X className="Popup-Close" onClick={this.togglePopup.bind(this)} />
+              <X
+                className="Popup-Close"
+                onClick={this.togglePopup.bind(this)}
+              />
               {children}
             </div>
           </div>

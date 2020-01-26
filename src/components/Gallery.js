@@ -74,14 +74,18 @@ export default class Gallery extends Component {
     const { images } = this.props
     return (
       <Fragment>
-        {images &&
-          images.length > 0 && (
-            <div className="Gallery">
-              {images.map((image, index) => (
+        {images && images.length > 0 && (
+          <div className="Gallery">
+            {images.map((image, index) => (
+              <div
+                onClick={() => this.isOpen(true, index)}
+                onKeyDown={() => this.isOpen(true, index)}
+                role="button"
+                tabIndex={index}
+              >
                 <figure
                   className="Gallery--Item"
                   key={_kebabCase(image.alt) + '-' + index}
-                  onClick={() => this.isOpen(true, index)}
                 >
                   <div>
                     <Image
@@ -92,21 +96,21 @@ export default class Gallery extends Component {
                   </div>
                   {image.title && <figcaption>{image.title}</figcaption>}
                 </figure>
-              ))}
-            </div>
-          )}
-        {this.state.loaded &&
-          this.state.sliderImages.length > 0 && (
-            <PhotoSwipe
-              isOpen={this.state.isOpen}
-              items={this.state.sliderImages}
-              options={{
-                index: this.state.index,
-                history: false
-              }}
-              onClose={() => this.isOpen(false)}
-            />
-          )}
+              </div>
+            ))}
+          </div>
+        )}
+        {this.state.loaded && this.state.sliderImages.length > 0 && (
+          <PhotoSwipe
+            isOpen={this.state.isOpen}
+            items={this.state.sliderImages}
+            options={{
+              index: this.state.index,
+              history: false
+            }}
+            onClose={() => this.isOpen(false)}
+          />
+        )}
       </Fragment>
     )
   }
