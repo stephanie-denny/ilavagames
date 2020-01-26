@@ -207,8 +207,26 @@ collections: # A list of collections the CMS should be able to edit
             }
           - { label: Slug, name: slug, widget: hidden, default: '' }
           - { label: Title, name: title, widget: string }
+          - {
+              label: Show Featured Image,
+              name: showFeaturedImage,
+              widget: boolean,
+            }
           - { label: Featured Image, name: featuredImage, widget: image }
           - { label: Subtitle, name: subtitle, widget: markdown }
+          - { name: video, label: video, widget: file }
+          - { name: videoPoster, label: videoPoster, widget: image }
+          - { label: videoTitle, name: videoTitle, widget: string }
+          - { label: Show Video Banner, name: showVideoBanner, widget: boolean }
+          - { label: Show Slideshow, name: showSlideShow, widget: boolean }
+          - label: Slideshow
+            name: slides
+            widget: 'list'
+            required: true
+            allow_add: false
+            fields:
+              - { label: 'Image', name: image, widget: image }
+              - { label: 'Title', name: 'title', widget: string, default: '' }
           - { label: Body, name: body, widget: markdown }
           - label: 'Accordion'
             name: 'accordion'

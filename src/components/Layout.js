@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import Meta from './Meta'
 import Nav from './Nav'
 import Footer from './Footer'
-
+import 'bootstrap/dist/css/bootstrap.min.css'
 import 'modern-normalize/modern-normalize.css'
 import './globalStyles.css'
 
@@ -58,7 +58,10 @@ export default ({ children, meta, title }) => {
               {title}
               <link href="https://ucarecdn.com" rel="preconnect" crossorigin />
               <link rel="dns-prefetch" href="https://ucarecdn.com" />
-
+              <link
+                href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+                rel="stylesheet"
+              />
               <script>UPLOADCARE_PUBLIC_KEY = '9c2cf5c03f9238a3e5ae';</script>
 
               <script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js"></script>
