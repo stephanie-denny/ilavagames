@@ -8,7 +8,6 @@ import Accordion from '../components/Accordion'
 import BackgroundVideo from '../components/BackgroundVideo'
 import Gallery from '../components/Gallery'
 import Popup from '../components/Popup'
-import DiagonalHero from '../components/DiagonalHero'
 
 // Export Template for use in CMS preview
 export const ComponentsPageTemplate = ({
@@ -25,11 +24,6 @@ export const ComponentsPageTemplate = ({
          gallery
        }) => (
          <main>
-           <DiagonalHero
-             title={title}
-             subtitle={subtitle}
-             backgroundImage={featuredImage}
-           />
            <PageHeader
              title={title}
              subtitle={subtitle}

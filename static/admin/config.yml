@@ -1,14 +1,15 @@
-# See https://github.com/netlify/netlify-cms/blob/master/example/config.yml
 backend:
   name: git-gateway
   branch: master # Branch to update (optional; defaults to master)
 
-# display_url: https://gatsbro.netlify.com # This url will display in the top-right of the CMS
+display_url: https://keen-sammet-2a8ce7.netlify.com
+logo_url: 'https://keen-sammet-2a8ce7.netlify.com/images/LavaGames-Logo.svg'
+locale: 'en'
 media_library:
   name: uploadcare
   config:
     publicKey: 9c2cf5c03f9238a3e5ae
-    multiple: false
+    multiple: true
     tabs: 'file camera url facebook gdrive'
     effects: 'crop,rotate,enhance,grayscale'
     imageShrink: '2000x2000'
@@ -240,44 +241,6 @@ collections: # A list of collections the CMS should be able to edit
                   widget: boolean,
                   required: false,
                 }
-
-  - name: infoPages
-    label: Info Page
-    editor:
-      preview: true
-    folder: content/infoPages
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
-    create: true # Allow users to create new documents in this collection
-    fields:
-      - {
-          label: Template,
-          name: template,
-          widget: hidden,
-          default: DefaultPage,
-        }
-      - { label: Slug, name: slug, widget: string }
-      - { label: Title, name: title, widget: string }
-      - { label: Featured Image, name: featuredImage, widget: image }
-      - { label: Body, name: body, widget: markdown }
-      - label: 'Meta'
-        required: false
-        name: 'meta'
-        widget: 'object'
-        fields:
-          - { label: Title, name: title, widget: string, required: false }
-          - {
-              label: Description,
-              name: description,
-              widget: text,
-              required: false,
-            }
-          - {
-              label: Canonical Link,
-              name: canonicalLink,
-              widget: string,
-              required: false,
-            }
-          - { label: Noindex, name: noindex, widget: boolean, required: false }
 
   - name: posts
     label: Post

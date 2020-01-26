@@ -1,6 +1,7 @@
 import React from 'react'
 import CMS from 'netlify-cms-app'
 import './cms-utils'
+import uploadcare from 'netlify-cms-media-library-uploadcare'
 
 import { HomePageTemplate } from '../templates/HomePage'
 import { ComponentsPageTemplate } from '../templates/ComponentsPage'
@@ -38,3 +39,4 @@ CMS.registerPreviewTemplate('blog-page', ({ entry }) => (
 CMS.registerPreviewTemplate('posts', ({ entry }) => (
   <SinglePostTemplate {...entry.toJS().data} />
 ))
+CMS.registerMediaLibrary(uploadcare)

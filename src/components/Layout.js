@@ -6,7 +6,6 @@ import Nav from './Nav'
 import Footer from './Footer'
 
 import 'modern-normalize/modern-normalize.css'
-import '../../node_modules/codyhouse-framework/main/assets/css/style.scss'
 import './globalStyles.css'
 
 export default ({ children, meta, title }) => {
@@ -59,6 +58,10 @@ export default ({ children, meta, title }) => {
               {title}
               <link href="https://ucarecdn.com" rel="preconnect" crossorigin />
               <link rel="dns-prefetch" href="https://ucarecdn.com" />
+
+              <script>UPLOADCARE_PUBLIC_KEY = '9c2cf5c03f9238a3e5ae';</script>
+
+              <script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js"></script>
               {/* Add font link tags here */}
             </Helmet>
 
