@@ -51,6 +51,10 @@ a {
   color: var(--primary);
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 strong {
   font-weight: 600;
 }
@@ -198,7 +202,8 @@ blockquote {
 
 /* Buttons */
 
-.Button {
+.Button,
+.Button.outline:hover {
   background: var(--primary);
   color: white;
   text-transform: uppercase;
@@ -212,11 +217,16 @@ blockquote {
   transition: all 0.2s ease;
   cursor: pointer;
   border-radius: var(--borderRadius);
+  border: 1px solid transparent;
+  transition: 0.2s all;
 }
 .Button:hover,
-.Button:focus {
-  opacity: 0.95;
+.Button:focus,
+.Button.outline {
   outline: none;
+  border-color: var(--primary);
+  color: var(--primary);
+  background-color: transparent;
 }
 .Button[disabled] {
   opacity: 0.4;
@@ -232,4 +242,15 @@ blockquote {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.Button.secondary,
+.Button.secondary.outline:hover {
+  background: var(--secondary);
+}
+.Button.secondary:hover,
+.Button.secondary.outline {
+  color: var(--secondary);
+  border-color: var(--secondary);
+  background-color: transparent;
 }

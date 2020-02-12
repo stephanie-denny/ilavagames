@@ -47,33 +47,6 @@ collections: # A list of collections the CMS should be able to edit
           - { label: Address, name: address, widget: text }
           - { label: Phone, name: phone, widget: string }
           - { label: Email Address, name: email, widget: string }
-          - name: locations
-            label: locations
-            widget: list
-            fields:
-              - {
-                  name: mapLink,
-                  label: mapLink,
-                  widget: string,
-                  required: false,
-                  default: '',
-                }
-              - {
-                  name: lat,
-                  label: latitude,
-                  widget: string,
-                  required: false,
-                  delete: false,
-                  default: '',
-                }
-              - {
-                  name: lng,
-                  label: longitude,
-                  widget: string,
-                  required: false,
-                  delete: false,
-                  default: '',
-                }
           - label: 'Meta'
             required: false
             name: 'meta'
@@ -227,6 +200,34 @@ collections: # A list of collections the CMS should be able to edit
             fields:
               - { label: 'Image', name: image, widget: image }
               - { label: 'Title', name: 'title', widget: string, default: '' }
+          - label: 'About'
+            name: 'about'
+            widget: 'object'
+            fields:
+              - {
+                  label: 'About Title',
+                  name: 'title',
+                  widget: string,
+                  default: '',
+                }
+              - {
+                  label: 'About Subtitle',
+                  name: 'subtitle',
+                  widget: string,
+                  default: '',
+                }
+              - {
+                  label: 'About Text',
+                  name: 'text',
+                  widget: string,
+                  default: '',
+                }
+              - { label: 'About Image', name: 'text', widget: image }
+          - {
+              label: Show Blog on Homepage,
+              name: showBlogPosts,
+              widget: boolean,
+            }
           - { label: Body, name: body, widget: markdown }
           - label: 'Accordion'
             name: 'accordion'

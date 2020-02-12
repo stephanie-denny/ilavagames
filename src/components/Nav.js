@@ -28,7 +28,6 @@ export class Navigation extends Component {
 
   render() {
     const { active } = this.state,
-      { subNav } = this.props,
       NavLink = ({ to, className, children, ...props }) => (
         <Link
           to={to}
@@ -52,41 +51,7 @@ export class Navigation extends Component {
             <NavLink to="/">Home</NavLink>
             <NavLink to="/games/">Games</NavLink>
             <NavLink to="/about/">About</NavLink>
-            <div
-              className={`Nav--Group ${
-                this.state.activeSubNav === 'posts' ? 'active' : ''
-              }`}
-            >
-              <span
-                className={`NavLink Nav--GroupParent ${
-                  this.props.location.pathname.includes('posts') ||
-                  this.props.location.pathname.includes('blog') ||
-                  this.props.location.pathname.includes('post-categories')
-                    ? 'active'
-                    : ''
-                }`}
-                onClick={() => this.toggleSubNav('posts')}
-                onKeyDown={() => this.toggleSubNav('posts')}
-                role="link"
-                tabIndex={0}
-              >
-                Blog
-              </span>
-              <div className="Nav--GroupLinks">
-                <NavLink to="/blog/" className="Nav--GroupLink">
-                  All Posts
-                </NavLink>
-                {subNav.posts.map((link, index) => (
-                  <NavLink
-                    to={link.slug}
-                    key={'posts-subnav-link-' + index}
-                    className="Nav--GroupLink"
-                  >
-                    {link.title}
-                  </NavLink>
-                ))}
-              </div>
-            </div>
+            <NavLink to="/blog/">Blog</NavLink>
             <NavLink to="/contact/">Contact</NavLink>
           </div>
           <button
