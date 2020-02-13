@@ -1,6 +1,15 @@
 .Contact {
 }
-
+.Contact .card {
+  color: black;
+}
+.card-header {
+  background-color: var(--secondary);
+}
+.card-header button {
+  color: white;
+  font-size: 1.3em;
+}
 .Contact--Details {
   margin-top: 3rem;
 }
