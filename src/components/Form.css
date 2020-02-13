@@ -43,7 +43,8 @@
 }
 
 .Form--Input,
-.Form--Textarea {
+.Form--Textarea,
+.marketing input {
   font-family: inherit;
   flex-grow: 1;
   box-sizing: border-box;
@@ -101,6 +102,7 @@
 
 .Form--Input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  box-shadow: 0 0 0 1000px white inset !important;
 }
 
 .Form--Input:focus {

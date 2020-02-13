@@ -17,6 +17,7 @@
 
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 3px var(--grey);
+  box-shadow: inset 0 0 3px var(--grey);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -188,11 +189,11 @@ blockquote {
   }
 }
 
-.container {
+/* .container {
   max-width: 1111px;
   width: 90%;
   margin: 0 auto;
-}
+} */
 .container.skinny {
   max-width: 888px;
 }
@@ -203,7 +204,8 @@ blockquote {
 /* Buttons */
 
 .Button,
-.Button.outline:hover {
+.Button.outline:hover,
+.marketing button {
   background: var(--primary);
   color: white;
   text-transform: uppercase;
@@ -220,6 +222,7 @@ blockquote {
   border: 1px solid transparent;
   transition: 0.2s all;
 }
+
 .Button:hover,
 .Button:focus,
 .Button.outline {
@@ -253,4 +256,7 @@ blockquote {
   color: var(--secondary);
   border-color: var(--secondary);
   background-color: transparent;
+}
+.ScrollUpButton__Container svg {
+  fill: white;
 }

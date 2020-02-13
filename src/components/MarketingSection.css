@@ -1,0 +1,43 @@
+section.marketing {
+  background: rgb(62, 96, 117);
+  background: -moz-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(62, 96, 117, 1) 0%,
+    rgba(62, 96, 117, 1) 13%,
+    rgba(0, 12, 31, 1) 80%,
+    rgba(0, 12, 31, 1) 99%
+  );
+  background: -webkit-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(62, 96, 117, 1) 0%,
+    rgba(62, 96, 117, 1) 13%,
+    rgba(0, 12, 31, 1) 80%,
+    rgba(0, 12, 31, 1) 99%
+  );
+  background: radial-gradient(
+    ellipse at center,
+    rgba(62, 96, 117, 1) 0%,
+    rgba(62, 96, 117, 1) 13%,
+    rgba(0, 12, 31, 1) 80%,
+    rgba(0, 12, 31, 1) 99%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e6075', endColorstr='#000c1f',GradientType=1 );
+
+  color: white;
+}
+section.marketing h2 {
+  font-size: 2em;
+}
+.marketing .newsletter div {
+  position: relative;
+}
+.marketing input {
+  padding: 1.3rem 2rem !important;
+}
+.marketing button {
+  position: absolute;
+  right: 0;
+  top: 0;
+}

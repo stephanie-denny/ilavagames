@@ -1,14 +1,21 @@
 import React, { Fragment } from 'react'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
+import { TinyButton as ScrollUpButton } from 'react-scroll-up-button'
 import Meta from './Meta'
 import Nav from './Nav'
+import MarketingSection from './MarketingSection'
 import Footer from './Footer'
-import 'bootstrap/dist/css/bootstrap.min.css'
+
 import 'modern-normalize/modern-normalize.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './globalStyles.css'
 
+
+
+
 export default ({ children, meta, title }) => {
+  const url = typeof window !== 'undefined' ? window.location.pathname : '';
   return (
     <StaticQuery
       query={graphql`
@@ -17,6 +24,12 @@ export default ({ children, meta, title }) => {
             siteTitle
             siteDescription
             googleTrackingId
+            marketing {
+              contributorTitle
+              contributorText
+              newsletterTitle
+              newsletterText
+            }
             socialMediaCard {
               image
             }
@@ -39,7 +52,7 @@ export default ({ children, meta, title }) => {
         }
       `}
       render={data => {
-        const { siteTitle, socialMediaCard, googleTrackingId } =
+        const { siteTitle, socialMediaCard, googleTrackingId, marketing } =
             data.settingsYaml || {},
           subNav = {
             posts: data.allPosts.hasOwnProperty('edges')
@@ -82,7 +95,12 @@ export default ({ children, meta, title }) => {
             <Nav subNav={subNav} />
 
             <Fragment>{children}</Fragment>
-
+            {url !== '/contact/' && (
+              <MarketingSection marketing={marketing} />
+            )}
+            <div role="complementary">
+              <ScrollUpButton />
+            </div>
             <Footer />
             <script src="../node_modules/codyhouse-framework/main/assets/js/util.js"></script>
           </Fragment>

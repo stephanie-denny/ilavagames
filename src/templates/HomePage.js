@@ -53,6 +53,7 @@ export const HomePageTemplate = ({
          about,
          body,
          posts = [],
+         showBlogPosts,
          postCategories = [],
          enableSearch = true,
          contentType
@@ -110,18 +111,25 @@ export const HomePageTemplate = ({
                    ''
                  )}
                  {about ? <AboutSection about={about} /> : ''}
-                 {!!posts.length && (
+                 {showBlogPosts && !!posts.length && (
+                     <section className="section">
+                       <div className="container">
+                         <h3 className="mb-5">LavaGames News</h3>
+                         <PostSection
+                           limit={3}
+                           showLoadMore={false}
+                           posts={filteredPosts}
+                         />
+                       </div>
+                     </section>
+                   )}
+                 {!!body.length && (
                    <section className="section">
                      <div className="container">
-                       <PostSection showLoadMore={false} posts={filteredPosts} />
+                       <Content source={body} />
                      </div>
                    </section>
                  )}
-                 <section className="section">
-                   <div className="container">
-                     <Content source={body} />
-                   </div>
-                 </section>
                </main>
              )
            }}
@@ -181,6 +189,7 @@ export const pageQuery = graphql`
                  text
                  image
                }
+               showBlogPosts
              }
            }
            posts: allMarkdownRemark(

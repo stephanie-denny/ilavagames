@@ -1,12 +1,8 @@
 {
-  "name": "LavaGames",
+  "name": "lavagames",
   "HomePage": "https://ilavagames.com/",
   "description": "Marketing website for LavaGames",
   "version": "2.0.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/thriveweb/yellowcake"
-  },
   "dependencies": {
     "@reach/router": "^1.2.1",
     "@sendgrid/mail": "^6.4.0",
@@ -52,6 +48,7 @@
     "react-feather": "^2.0.3",
     "react-fontawesome": "^1.7.1",
     "react-helmet": "^5.2.1",
+    "react-mailchimp-subscribe": "^2.1.0",
     "react-markdown": "^4.2.2",
     "react-photoswipe": "^1.3.0",
     "react-scroll-up-button": "^1.6.4",

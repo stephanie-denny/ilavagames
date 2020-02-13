@@ -10,7 +10,7 @@ const AboutSection = ({ about }) => {
     <section className="section about">
       <div className="container">
         <Row>
-          <Col className="col-6">
+          <Col className="col-12 mb-5 col-md-6 text-center text-lg-left">
             <h2>{about.title}</h2>
             <p>{about.subtitle}</p>
             <p>{about.text}</p>
@@ -18,7 +18,7 @@ const AboutSection = ({ about }) => {
               More About Lava Games
             </Link>
           </Col>
-          <Col className="col-6">
+          <Col className="col-12 col-md-6">
             <img src={about.image} alt="" className="img-fluid" />
           </Col>
         </Row>
