@@ -1,9 +1,14 @@
 .Nav {
-  background: var(--primaryDark);
-  position: sticky;
+  background: transparent;
+  position: fixed;
+  width: 100%;
   top: 0;
   z-index: 2;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.025);
+  transition: all 0.5s;
+}
+.Nav.fixed {
+  background: var(--primaryDark);
 }
 
 .Nav--Container {
