@@ -7,7 +7,24 @@ import Contact from '../components/Contact'
 import Content from '../components/Content'
 import Layout from '../components/Layout'
 import { Accordion, Card, Button } from 'react-bootstrap'
+import { useAccordionToggle } from 'react-bootstrap/AccordionToggle'
 import './ContactPage.css'
+
+function CustomToggle({ children, eventKey }) {
+  const decoratedOnClick = useAccordionToggle(eventKey, () =>
+    console.log('totally custom!')
+  )
+
+  return (
+    <button
+      type="button"
+      style={{ backgroundColor: 'pink' }}
+      onClick={decoratedOnClick}
+    >
+      {children}
+    </button>
+  )
+}
 
 // Export Template for use in CMS preview
 export const ContactPageTemplate = ({
@@ -28,9 +45,9 @@ export const ContactPageTemplate = ({
            <Accordion defaultActiveKey="0">
              <Card>
                <Card.Header>
-                 <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                 <CustomToggle as={Button} variant="link" eventKey="0">
                    Contribute to LavaGames
-                 </Accordion.Toggle>
+                 </CustomToggle>
                </Card.Header>
                <Accordion.Collapse eventKey="0">
                  <Card.Body>
