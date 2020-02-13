@@ -5,3 +5,8 @@ siteDescription: >-
 socialMediaCard:
   image: 'https://ucarecdn.com/fcc8d148-a9a8-42ee-a793-0f12b1437f61/'
 googleTrackingId: 'UA-133175780-1'
+marketing:
+  contributorTitle: 'Become a LavaGames Contributor'
+  contributorText: 'Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Sed posuere consectetur est at lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus mollis interdum. Etiam porta sem malesuada magna m'
+  newsletterTitle: 'Join our Newsletter'
+  newsletterText: 'Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Sed posuere consectetur est at lobortis.'

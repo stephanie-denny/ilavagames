@@ -2,7 +2,7 @@ const postcssPresetEnv = require('postcss-preset-env')
 
 module.exports = {
   siteMetadata: {
-    title: 'iLavaGames',
+    title: 'LavaGames',
     siteUrl: 'https://keen-sammet-2a8ce7.netlify.com'
   },
   plugins: [
@@ -44,8 +44,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'iLavaGames',
-        short_name: 'iLavaGames',
+        name: 'LavaGames',
+        short_name: 'LavaGames',
         start_url: '/',
         background_color: '#00C2BD',
         theme_color: '#00C2BD',

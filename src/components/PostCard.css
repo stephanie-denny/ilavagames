@@ -1,7 +1,7 @@
 .PostCard {
   text-decoration: none;
   background: white;
-  color: inherit;
+  color: var(--darkGrey);
   border: 1px solid var(--lightGrey);
   border-radius: var(--borderRadius);
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);

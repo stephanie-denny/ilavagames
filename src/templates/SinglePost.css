@@ -24,7 +24,7 @@
 }
 
 .SinglePost--Content {
-  background: white;
+  background: var(--darkGrey);
   padding: 8rem 8rem 4rem 8rem;
 }
 

@@ -1,0 +1,7 @@
+section.about {
+  background-color: var(--lightGrey);
+  color: black;
+}
+section.about h2 {
+  font-size: 2em;
+}
