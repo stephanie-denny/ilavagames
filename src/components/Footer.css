@@ -1,5 +1,5 @@
 .footer {
-  padding: 2rem 0;
+  padding: 6rem 0;
   background: var(--primaryDark);
   font-size: 1.2rem;
 }
@@ -7,4 +7,25 @@
 .footer a {
   color: white;
   text-decoration: none;
+}
+.footer a.links {
+  font-size: 16px;
+  padding-bottom: 0.5em;
+  text-transform: uppercase;
+  border-bottom: 2px solid transparent;
+  transition: 0.2s;
+  font-family: 'Orbitron', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.footer a.links:hover {
+  color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+.footer .social span {
+  transition: all 0.2s;
+}
+.footer .social span:hover {
+  color: white !important;
 }
