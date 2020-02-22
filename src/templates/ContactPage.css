@@ -6,9 +6,11 @@
 .card-header {
   background-color: var(--secondary);
 }
-.card-header button {
+.card-header {
   color: white;
   font-size: 1.3em;
+  cursor: pointer;
+  font-family: var(--font-secondary);
 }
 .Contact--Details {
   margin-top: 3rem;
