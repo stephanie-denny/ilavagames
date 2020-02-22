@@ -42,9 +42,31 @@ collections: # A list of collections the CMS should be able to edit
               options:
                 { media_library: { config: { imageShrink: 2600x2600 } } },
             }
+            - {
+              label: Show Featured Image,
+              name: showFeaturedImage,
+              widget: boolean,
+            }
           - { label: Subtitle, name: subtitle, widget: markdown }
-          - { label: Body, name: body, widget: markdown }
-          - { label: Address, name: address, widget: text }
+          - { name: video, label: video, widget: file }
+          - { name: videoPoster, label: videoPoster, widget: image }
+          - { label: videoTitle, name: videoTitle, widget: string }
+          - { label: Show Video Banner, name: showVideoBanner, widget: boolean }
+          - { label: Show Slideshow, name: showSlideShow, widget: boolean }
+          - label: Slideshow
+            name: slides
+            widget: 'list'
+            required: true
+            allow_add: false
+            fields:
+              - { label: 'Image', name: image, widget: image }
+              - { label: 'Title', name: 'title', widget: string, default: '' }
+          - { label: Contribute Title, name: contributeTitle, widget: string }
+          - { label: Contribute Text, name: contributeText, widget: markdown }
+          - { label: Contact Title, name: contactTitle, widget: string }
+          - { label: Contact Text, name: contactText, widget: markdown }
+          - { label: Support Title, name: supportTitle, widget: string }
+          - { label: Support Text, name: supportText, widget: markdown }
           - { label: Phone, name: phone, widget: string }
           - { label: Email Address, name: email, widget: string }
           - label: 'Meta'

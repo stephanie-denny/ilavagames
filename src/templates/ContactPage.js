@@ -1,13 +1,17 @@
 import React from 'react'
 import queryString from 'query-string'
-import { MapPin, Smartphone, Mail } from 'react-feather'
+import { Smartphone, Mail } from 'react-feather'
 import { graphql } from 'gatsby'
+import { BrowserView, MobileView } from 'react-device-detect'
 
 import PageHeader from '../components/PageHeader'
+import BackgroundVideo from '../components/BackgroundVideo'
+import Slideshow from '../components/Slideshow'
 import Contact from '../components/Contact'
-import Content from '../components/Content'
+import Contribute from '../components/Contribute'
+import Support from '../components/Support'
 import Layout from '../components/Layout'
-import { Accordion, Card, Button } from 'react-bootstrap'
+import { Accordion, Card, Button, Row, Col } from 'react-bootstrap'
 import './ContactPage.css'
 
 function CustomToggle({ children, eventKey }) {
@@ -38,179 +42,158 @@ export const ContactPageTemplate = ({
          title,
          subtitle,
          featuredImage,
-         address,
          phone,
-         email
+         email,
+         video,
+         videoPoster,
+         videoTitle,
+         showVideoBanner,
+         slides,
+         showFeaturedImage,
+         showSlideShow,
+         contributeTitle,
+         contributeText,
+         contactTitle,
+         contactText,
+         supportTitle,
+         supportText
        }) => (
-           <main className="Contact">
+         <main className="Contact">
+           {showFeaturedImage ? (
              <PageHeader
+               large
                title={title}
                subtitle={subtitle}
                backgroundImage={featuredImage}
              />
-             <CustomAccordion>
-               <Card>
-                 <CustomToggle
-                   variant="link"
-                   eventKey="0"
-                   activeKey="0"
-                 >
-                   Contribute to LavaGames
-                 </CustomToggle>
-                 <Accordion.Collapse eventKey="0">
-                   <Card.Body>
-                     <section className="section Contact--Section1">
-                       <div className="container Contact--Section1--Container">
-                         <div>
-                           <Content source={body} />
-                           <div className="Contact--Details">
-                             {address && (
-                               <a
-                                 className="Contact--Details--Item"
-                                 href={`https://www.google.com.au/maps/search/${encodeURI(
-                                   address
-                                 )}`}
-                                 target="_blank"
-                                 rel="noopener noreferrer"
-                               >
-                                 <MapPin /> {address}
-                               </a>
-                             )}
-                             {phone && (
-                               <a
-                                 className="Contact--Details--Item"
-                                 href={`tel:${phone}`}
-                               >
-                                 <Smartphone /> {phone}
-                               </a>
-                             )}
-                             {email && (
-                               <a
-                                 className="Contact--Details--Item"
-                                 href={`mailto:${email}`}
-                               >
-                                 <Mail /> {email}
-                               </a>
-                             )}
-                           </div>
+           ) : showVideoBanner ? (
+             <section className="BackgroundVideo-section section">
+               <BackgroundVideo poster={videoPoster} videoTitle={videoTitle}>
+                 {video && <source src={video} type="video/mp4" />}
+               </BackgroundVideo>
+             </section>
+           ) : showSlideShow ? (
+             <section className="section">
+               <MobileView>
+                 <PageHeader
+                   large
+                   title={title}
+                   subtitle={subtitle}
+                   backgroundImage={featuredImage}
+                 />
+               </MobileView>
+               <BrowserView>
+                 <Slideshow main="main" fadeImages={slides} />
+               </BrowserView>
+             </section>
+           ) : (
+             ''
+           )}
+           <CustomAccordion>
+             <Card>
+               <CustomToggle variant="link" eventKey="0" activeKey="0">
+                 Contribute to LavaGames
+               </CustomToggle>
+               <Accordion.Collapse eventKey="0">
+                 <Card.Body>
+                   <section className="section container">
+                     <Row>
+                       <Col>
+                         <Contribute />
+                       </Col>
+                       <Col>
+                         <h2>{contributeTitle}</h2>
+                         <p>{contributeText}</p>
+                       </Col>
+                     </Row>
+                   </section>
+                 </Card.Body>
+               </Accordion.Collapse>
+             </Card>
+             <Card>
+               <CustomToggle
+                 as={Button}
+                 variant="link"
+                 eventKey="1"
+                 activeKey="1"
+               >
+                 Contact LavaGames
+               </CustomToggle>
+               <Accordion.Collapse eventKey="1">
+                 <Card.Body>
+                   <section className="section container">
+                     <Row>
+                       <Col>
+                         <h2>{contactTitle}</h2>
+                         <p>{contactText}</p>
+                         <div className="Contact--Details">
+                           {phone && (
+                             <a
+                               className="Contact--Details--Item"
+                               href={`tel:${phone}`}
+                             >
+                               <Smartphone /> {phone}
+                             </a>
+                           )}
+                           {email && (
+                             <a
+                               className="Contact--Details--Item"
+                               href={`mailto:${email}`}
+                             >
+                               <Mail /> {email}
+                             </a>
+                           )}
                          </div>
-
-                         <div>
-                           <Contact />
+                       </Col>
+                       <Col>
+                         <Contact />
+                       </Col>
+                     </Row>
+                   </section>
+                 </Card.Body>
+               </Accordion.Collapse>
+             </Card>
+             <Card>
+               <CustomToggle as={Button} variant="link" eventKey="2">
+                 LavaGames Support
+               </CustomToggle>
+               <Accordion.Collapse eventKey="2">
+                 <Card.Body>
+                   <section className="section container">
+                     <Row>
+                       <Col>
+                         <Support />
+                       </Col>
+                       <Col>
+                         <h2>{supportTitle}</h2>
+                         <p>{supportText}</p>
+                         <div className="Contact--Details">
+                           {phone && (
+                             <a
+                               className="Contact--Details--Item"
+                               href={`tel:${phone}`}
+                             >
+                               <Smartphone /> {phone}
+                             </a>
+                           )}
+                           {email && (
+                             <a
+                               className="Contact--Details--Item"
+                               href={`mailto:${email}`}
+                             >
+                               <Mail /> {email}
+                             </a>
+                           )}
                          </div>
-                       </div>
-                     </section>
-                   </Card.Body>
-                 </Accordion.Collapse>
-               </Card>
-               <Card>
-                 <CustomToggle
-                   as={Button}
-                   variant="link"
-                   eventKey="1"
-                   activeKey="1"
-                 >
-                   Contact LavaGames
-                 </CustomToggle>
-                 <Accordion.Collapse eventKey="1">
-                   <Card.Body>
-                     <section className="section Contact--Section1">
-                       <div className="container Contact--Section1--Container">
-                         <div>
-                           <Content source={body} />
-                           <div className="Contact--Details">
-                             {address && (
-                               <a
-                                 className="Contact--Details--Item"
-                                 href={`https://www.google.com.au/maps/search/${encodeURI(
-                                   address
-                                 )}`}
-                                 target="_blank"
-                                 rel="noopener noreferrer"
-                               >
-                                 <MapPin /> {address}
-                               </a>
-                             )}
-                             {phone && (
-                               <a
-                                 className="Contact--Details--Item"
-                                 href={`tel:${phone}`}
-                               >
-                                 <Smartphone /> {phone}
-                               </a>
-                             )}
-                             {email && (
-                               <a
-                                 className="Contact--Details--Item"
-                                 href={`mailto:${email}`}
-                               >
-                                 <Mail /> {email}
-                               </a>
-                             )}
-                           </div>
-                         </div>
-
-                         <div>
-                           <Contact />
-                         </div>
-                       </div>
-                     </section>
-                   </Card.Body>
-                 </Accordion.Collapse>
-               </Card>
-               <Card>
-                 <CustomToggle as={Button} variant="link" eventKey="2">
-                   LavaGames Support
-                 </CustomToggle>
-                 <Accordion.Collapse eventKey="2">
-                   <Card.Body>
-                     <section className="section Contact--Section1">
-                       <div className="container Contact--Section1--Container">
-                         <div>
-                           <Content source={body} />
-                           <div className="Contact--Details">
-                             {address && (
-                               <a
-                                 className="Contact--Details--Item"
-                                 href={`https://www.google.com.au/maps/search/${encodeURI(
-                                   address
-                                 )}`}
-                                 target="_blank"
-                                 rel="noopener noreferrer"
-                               >
-                                 <MapPin /> {address}
-                               </a>
-                             )}
-                             {phone && (
-                               <a
-                                 className="Contact--Details--Item"
-                                 href={`tel:${phone}`}
-                               >
-                                 <Smartphone /> {phone}
-                               </a>
-                             )}
-                             {email && (
-                               <a
-                                 className="Contact--Details--Item"
-                                 href={`mailto:${email}`}
-                               >
-                                 <Mail /> {email}
-                               </a>
-                             )}
-                           </div>
-                         </div>
-
-                         <div>
-                           <Contact />
-                         </div>
-                       </div>
-                     </section>
-                   </Card.Body>
-                 </Accordion.Collapse>
-               </Card>
-             </CustomAccordion>
-           </main>
-         )
+                       </Col>
+                     </Row>
+                   </section>
+                 </Card.Body>
+               </Accordion.Collapse>
+             </Card>
+           </CustomAccordion>
+         </main>
+       )
 
 const ContactPage = ({ data: { page } }) => (
   <Layout
@@ -224,19 +207,34 @@ const ContactPage = ({ data: { page } }) => (
 export default ContactPage
 
 export const pageQuery = graphql`
-  query ContactPage($id: String!) {
-    page: markdownRemark(id: { eq: $id }) {
-      ...Meta
-      html
-      frontmatter {
-        title
-        template
-        subtitle
-        featuredImage
-        address
-        phone
-        email
-      }
-    }
-  }
-`
+         query ContactPage($id: String!) {
+           page: markdownRemark(id: { eq: $id }) {
+             ...Meta
+             html
+             frontmatter {
+               title
+               template
+               subtitle
+               featuredImage
+               showFeaturedImage
+               showVideoBanner
+               video
+               videoPoster
+               videoTitle
+               showSlideShow
+               slides {
+                 image
+                 title
+               }
+               contributeTitle
+               contributeText
+               contactTitle
+               contactText
+               supportTitle
+               supportText
+               phone
+               email
+             }
+           }
+         }
+       `

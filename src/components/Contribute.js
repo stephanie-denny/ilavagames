@@ -3,7 +3,7 @@ import { navigateTo } from 'gatsby-link'
 
 import './Form.css'
 
-export default class Contact extends React.Component {
+export default class Contribute extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -63,13 +63,26 @@ export default class Contact extends React.Component {
               <input
                 className="Form--Input Form--InputText"
                 type="text"
-                placeholder="Your Name"
+                placeholder="First Name"
                 name="name"
                 onChange={this.handleChange}
                 required
               />
-              <span>Your name:</span>
+              <span>First name:</span>
             </label>
+            <label className="Form--Label">
+              <input
+                className="Form--Input Form--InputText"
+                type="text"
+                placeholder="Last Name"
+                name="name"
+                onChange={this.handleChange}
+                required
+              />
+              <span>Last name:</span>
+            </label>
+          </div>
+          <div className="Form--Group">
             <label className="Form--Label">
               <input
                 className="Form--Input Form--InputText"
@@ -81,7 +94,29 @@ export default class Contact extends React.Component {
               />
               <span>Your email:</span>
             </label>
+            <label className="Form--Label">
+              <input
+                className="Form--Input Form--InputText"
+                type="text"
+                name="subject"
+                placeholder="Subject"
+                onChange={this.handleChange}
+                required
+              />
+              <span>Subject:</span>
+            </label>
           </div>
+            <label className="Form--Label">
+              <input
+                className="Form--Input Form--InputText"
+                type="text"
+                name="url"
+                placeholder="Website URL"
+                onChange={this.handleChange}
+                required
+              />
+              <span>Website URL:</span>
+            </label>
           <label className="Form--Label">
             <textarea
               className="Form--Input Form--Textarea Form--InputText"

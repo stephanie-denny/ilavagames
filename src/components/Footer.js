@@ -1,6 +1,6 @@
 import React from 'react'
 import Logo from './Logo'
-import InstagramFeed from './InstagramFeed'
+// import InstagramFeed from './InstagramFeed'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { Link } from 'gatsby'
@@ -9,12 +9,12 @@ import './Footer.css'
 
 export default () => (
   <div>
-    <h2 className="taCenter">
+    {/* <h2 className="taCenter">
       Follow us{' '}
       <a href="https://twitter.com/LavaGamesStudio">@LavaGamesStudio</a>
     </h2>
     <br />
-    <InstagramFeed count="8" />
+    <InstagramFeed count="8" /> */}
     <footer className="footer">
       <div className="container p-5">
         <Row>

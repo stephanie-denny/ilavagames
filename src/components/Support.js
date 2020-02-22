@@ -1,9 +1,10 @@
 import React, { Fragment } from 'react'
 import { navigateTo } from 'gatsby-link'
+import FA from 'react-fontawesome'
 
 import './Form.css'
 
-export default class Contact extends React.Component {
+export default class Support extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -82,6 +83,49 @@ export default class Contact extends React.Component {
               <span>Your email:</span>
             </label>
           </div>
+          <label className="Form--Label">
+            <select
+              className="Form--Select"
+              name="email"
+              required
+            >
+              <option selected disabled>
+                First Choice
+              </option>
+              <option>Option 1</option>
+              <option>Option 2</option>
+            </select>
+          </label>
+          <label className="Form--Label">
+            <select
+              className="Form--Select"
+              name="email"
+              required
+            >
+              <option selected disabled>
+                Second Choice
+              </option>
+              <option>Option 1</option>
+              <option>Option 2</option>
+            </select>
+          </label>
+          <input
+            className="Form--Upload"
+            type="file"
+            name="upload"
+            placeholder="Upload File"
+            onChange={this.handleChange}
+            id="upload"
+          />
+          <label className="Form--Label" for="upload">
+            <span>
+              <FA
+                name="upload"
+                style={{ color: 'var(--secondary)' }}
+              />
+              {' '} Upload File
+            </span>
+          </label>
           <label className="Form--Label">
             <textarea
               className="Form--Input Form--Textarea Form--InputText"
