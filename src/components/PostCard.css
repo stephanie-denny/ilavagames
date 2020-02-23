@@ -9,10 +9,39 @@
   overflow: hidden;
 }
 
+.Blog .main .PostCard {
+  display: flex;
+  padding: 2rem;
+  background: transparent;
+  border: none;
+  color: white;
+  border-bottom: 1px solid gray;
+}
+
+.Blog .main .PostCard--Image {
+  margin: 0;
+}
+
+.Blog .main .PostCard--Content {
+  padding-bottom: 0;
+}
+
+.PostCard--Date {
+  color: rgba(255, 255, 255, 0.3);
+}
 .PostCard:hover,
 .PostCard:focus {
-  transform: translateY(-1px);
+  transform: translateY(-5px);
   box-shadow: 0 2px 30px rgba(0, 0, 0, 0.15);
+}
+.PostCard:hover .PostCard--Content,
+.PostCard:focus .PostCard--Content {
+  color: var(--darkGrey);
+}
+.Blog .main .PostCard:hover,
+.Blog .main .PostCard:focus {
+  transform: translateY(-10px);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .PostCard--Image {
@@ -25,8 +54,16 @@
   margin: 0;
 }
 
+.Blog .main .PostCard--Title {
+  color: rgba(255, 255, 255, 1);
+}
+
 .PostCard--Content {
   padding: 0 2.5rem 2.5rem;
+}
+
+.Blog .main .PostCard--Content {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .PostCard--Category {

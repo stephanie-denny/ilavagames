@@ -1,7 +1,9 @@
 .SinglePost {
-  background: var(--lightGrey);
+  /* background: var(--lightGrey); */
 }
-
+.SinglePost.section {
+  padding-top: 10rem;
+}
 .SinglePost--BackButton {
   color: white;
   position: relative;
@@ -25,7 +27,7 @@
 
 .SinglePost--Content {
   background: var(--darkGrey);
-  padding: 8rem 8rem 4rem 8rem;
+  padding: 5rem;
 }
 
 @media screen and (max-width: 750px) {
@@ -50,7 +52,7 @@
 }
 
 .SinglePost--InnerContent {
-  padding: 0 8rem;
+  padding: 0;
 }
 
 @media screen and (max-width: 750px) {
@@ -71,6 +73,7 @@
   font-size: 1.2rem;
   font-weight: 600;
   text-decoration: none;
+  color: white;
 }
 
 .SinglePost--Pagination--Link.next {

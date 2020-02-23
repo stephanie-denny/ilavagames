@@ -5,6 +5,8 @@ status: Featured / Published
 date: '2018-03-27'
 featuredImage: >-
   https://ucarecdn.com/f540281a-41cf-4bfa-8181-b172e2655fba/-/crop/1632x1777/0,672/-/preview/
+categories:
+  - category: News
 excerpt: >-
   Etiam ac quam eget lectus venenatis ullamcorper sit amet non arcu. Nullam
   interdum arcu vitae augue pulvinar sodales. Sed non dui diam. Quisque lectus
@@ -18,6 +20,7 @@ meta:
   noindex: false
   title: test meta title
 ---
+
 Paragraphs are separated by a blank line.
 
 ![Test Image](https://ucarecdn.com/ac9898a0-413a-467b-95fa-0a9959c30710/)
@@ -28,9 +31,9 @@ The second paragraph. This is placeholder text that our web designers put here t
 
 ### Unordered lists:
 
-* this one
-* that one
-* the other one
+- this one
+- that one
+- the other one
 
 ### Ordered lists:
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { Location } from '@reach/router'
+import { Link, Location } from '@reach/router'
 import qs from 'qs'
 import { BrowserView, MobileView } from 'react-device-detect'
 import PageHeader from '../components/PageHeader'
@@ -112,17 +112,23 @@ export const HomePageTemplate = ({
                  )}
                  {about ? <AboutSection about={about} /> : ''}
                  {showBlogPosts && !!posts.length && (
-                     <section className="section">
-                       <div className="container">
-                         <h3 className="mb-5">LavaGames News</h3>
-                         <PostSection
-                           limit={3}
-                           showLoadMore={false}
-                           posts={filteredPosts}
-                         />
+                   <section className="section">
+                     <div className="container">
+                       <h3 className="mb-5">LavaGames News</h3>
+                       <PostSection
+                         limit={3}
+                         showLoadMore={false}
+                         posts={filteredPosts}
+                       />
+                       <div className="text-center">
+                       <Link to="/blog" className="Button secondary mt-5">
+                         Read More
+                       </Link>
+
                        </div>
-                     </section>
-                   )}
+                     </div>
+                   </section>
+                 )}
                  {!!body.length && (
                    <section className="section">
                      <div className="container">
