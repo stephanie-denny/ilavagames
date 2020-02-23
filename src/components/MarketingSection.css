@@ -5,7 +5,7 @@ section.marketing {
     ellipse cover,
     rgba(62, 96, 117, 1) 0%,
     rgba(62, 96, 117, 1) 13%,
-    rgba(0, 12, 31, 1) 80%,
+    rgba(0, 12, 31, 1) 66%,
     rgba(0, 12, 31, 1) 99%
   );
   background: -webkit-radial-gradient(
@@ -13,19 +13,20 @@ section.marketing {
     ellipse cover,
     rgba(62, 96, 117, 1) 0%,
     rgba(62, 96, 117, 1) 13%,
-    rgba(0, 12, 31, 1) 80%,
+    rgba(0, 12, 31, 1) 66%,
     rgba(0, 12, 31, 1) 99%
   );
   background: radial-gradient(
     ellipse at center,
     rgba(62, 96, 117, 1) 0%,
     rgba(62, 96, 117, 1) 13%,
-    rgba(0, 12, 31, 1) 80%,
+    rgba(0, 12, 31, 1) 66%,
     rgba(0, 12, 31, 1) 99%
   );
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e6075', endColorstr='#000c1f',GradientType=1 );
-
+  padding: 8em 0;
   color: white;
+  border: none;
 }
 section.marketing h2 {
   font-size: 2em;

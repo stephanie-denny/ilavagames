@@ -1,5 +1,17 @@
 .PostSection {
 }
+.Blog .PageHeader {
+  padding: 30rem 0;
+}
+
+.container-fluid.featured {
+  position: absolute;
+  top: 15rem;
+  left: 0;
+  right: 0;
+  padding-left: 10rem;
+  padding-right: 10rem;
+}
 
 .PostSection--Grid {
   display: flex;
@@ -35,6 +47,16 @@
     grid-gap: 4rem;
   }
 
+  .container-fluid.featured .PostSection--Grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 3rem;
+  }
+
+  .Blog .PostSection--Grid {
+    display: grid;
+    grid-template-columns: initial;
+    grid-gap: 4rem;
+  }
   .PostSection--Grid > * {
     width: auto;
     margin: 0;

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import _get from 'lodash/get'
 import { Link, graphql } from 'gatsby'
-import { ChevronLeft } from 'react-feather'
+// import { ChevronLeft } from 'react-feather'
 
 import Content from '../components/Content'
 import Layout from '../components/Layout'
@@ -18,15 +18,15 @@ export const SinglePostTemplate = ({
        }) => (
          <main>
            <article
-             className="SinglePost section light"
+             className="SinglePost section"
              itemScope
              itemType="http://schema.org/BlogPosting"
            >
              <div className="container skinny">
-               <Link className="SinglePost--BackButton" to="/blog/">
-                 <ChevronLeft /> BACK
-               </Link>
                <div className="SinglePost--Content relative">
+                 {/* <Link className="SinglePost--BackButton" to="/blog/">
+                   <ChevronLeft /> Back to Blog
+                 </Link> */}
                  <div className="SinglePost--Meta">
                    {date && (
                      <time
@@ -60,7 +60,7 @@ export const SinglePostTemplate = ({
                    </h1>
                  )}
                  {featuredImage && (
-                   <img src={featuredImage} className="img-fluid mb-5" alt=""/>
+                   <img src={featuredImage} className="img-fluid mb-5" alt="" />
                  )}
 
                  <div className="SinglePost--InnerContent">
@@ -127,7 +127,7 @@ export const pageQuery = graphql`
                template
                subtitle
                featuredImage
-               date(formatString: "MMMM Do, YYYY")
+               date(formatString: "MMMM DD, YYYY")
                categories {
                  category
                }
