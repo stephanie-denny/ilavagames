@@ -8,6 +8,7 @@
   --darkGrey: #272727;
   --danger: #ff3d3d;
   --font-primary: 'Montserrat', sans-serif;
+  --font-secondary: 'Orbitron', sans-serif;
   --font-system: system-ui; /* postcssPresetEnv */
   --borderRadius: 3px;
 }

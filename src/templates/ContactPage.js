@@ -1,30 +1,40 @@
 import React from 'react'
-import { MapPin, Smartphone, Mail } from 'react-feather'
+import queryString from 'query-string'
+import { Smartphone, Mail } from 'react-feather'
 import { graphql } from 'gatsby'
+import { BrowserView, MobileView } from 'react-device-detect'
 
 import PageHeader from '../components/PageHeader'
+import BackgroundVideo from '../components/BackgroundVideo'
+import Slideshow from '../components/Slideshow'
 import Contact from '../components/Contact'
-import Content from '../components/Content'
+import Contribute from '../components/Contribute'
+import Support from '../components/Support'
 import Layout from '../components/Layout'
-import { Accordion, Card, Button } from 'react-bootstrap'
-import { useAccordionToggle } from 'react-bootstrap/AccordionToggle'
+import { Accordion, Card, Button, Row, Col } from 'react-bootstrap'
 import './ContactPage.css'
 
 function CustomToggle({ children, eventKey }) {
-  const decoratedOnClick = useAccordionToggle(eventKey, () =>
-    console.log('totally custom!')
-  )
-
   return (
-    <button
-      type="button"
-      style={{ backgroundColor: 'pink' }}
-      onClick={decoratedOnClick}
+    <Accordion.Toggle
+      as={Card.Header}
+      eventKey={eventKey}
+      className="p-3 pl-5"
     >
-      {children}
-    </button>
+     {children}
+    </Accordion.Toggle>
   )
 }
+
+function CustomAccordion({children}){
+  const url = typeof window !== 'undefined' ? window.location.search : ''
+  const value = queryString.parse(url)
+  let activeKey = (
+    value.tab === 'contact' ? "1" : value.tab === 'support' ?  "2" : "0"
+  )
+   return <Accordion defaultActiveKey={activeKey}>{children}</Accordion>
+}
+
 
 // Export Template for use in CMS preview
 export const ContactPageTemplate = ({
@@ -32,94 +42,91 @@ export const ContactPageTemplate = ({
          title,
          subtitle,
          featuredImage,
-         address,
          phone,
-         email
+         email,
+         video,
+         videoPoster,
+         videoTitle,
+         showVideoBanner,
+         slides,
+         showFeaturedImage,
+         showSlideShow,
+         contributeTitle,
+         contributeText,
+         contactTitle,
+         contactText,
+         supportTitle,
+         supportText
        }) => (
          <main className="Contact">
-           <PageHeader
-             title={title}
-             subtitle={subtitle}
-             backgroundImage={featuredImage}
-           />
-           <Accordion defaultActiveKey="0">
+           {showFeaturedImage ? (
+             <PageHeader
+               large
+               title={title}
+               subtitle={subtitle}
+               backgroundImage={featuredImage}
+             />
+           ) : showVideoBanner ? (
+             <section className="BackgroundVideo-section section">
+               <BackgroundVideo poster={videoPoster} videoTitle={videoTitle}>
+                 {video && <source src={video} type="video/mp4" />}
+               </BackgroundVideo>
+             </section>
+           ) : showSlideShow ? (
+             <section className="section">
+               <MobileView>
+                 <PageHeader
+                   large
+                   title={title}
+                   subtitle={subtitle}
+                   backgroundImage={featuredImage}
+                 />
+               </MobileView>
+               <BrowserView>
+                 <Slideshow main="main" fadeImages={slides} />
+               </BrowserView>
+             </section>
+           ) : (
+             ''
+           )}
+           <CustomAccordion>
              <Card>
-               <Card.Header>
-                 <CustomToggle as={Button} variant="link" eventKey="0">
-                   Contribute to LavaGames
-                 </CustomToggle>
-               </Card.Header>
+               <CustomToggle variant="link" eventKey="0" activeKey="0">
+                 Contribute to LavaGames
+               </CustomToggle>
                <Accordion.Collapse eventKey="0">
                  <Card.Body>
-                   <section className="section Contact--Section1">
-                     <div className="container Contact--Section1--Container">
-                       <div>
-                         <Content source={body} />
-                         <div className="Contact--Details">
-                           {address && (
-                             <a
-                               className="Contact--Details--Item"
-                               href={`https://www.google.com.au/maps/search/${encodeURI(
-                                 address
-                               )}`}
-                               target="_blank"
-                               rel="noopener noreferrer"
-                             >
-                               <MapPin /> {address}
-                             </a>
-                           )}
-                           {phone && (
-                             <a
-                               className="Contact--Details--Item"
-                               href={`tel:${phone}`}
-                             >
-                               <Smartphone /> {phone}
-                             </a>
-                           )}
-                           {email && (
-                             <a
-                               className="Contact--Details--Item"
-                               href={`mailto:${email}`}
-                             >
-                               <Mail /> {email}
-                             </a>
-                           )}
-                         </div>
-                       </div>
-
-                       <div>
-                         <Contact />
-                       </div>
-                     </div>
+                   <section className="section container">
+                     <Row>
+                       <Col>
+                         <Contribute />
+                       </Col>
+                       <Col>
+                         <h2>{contributeTitle}</h2>
+                         <p>{contributeText}</p>
+                       </Col>
+                     </Row>
                    </section>
                  </Card.Body>
                </Accordion.Collapse>
              </Card>
              <Card>
-               <Card.Header>
-                 <Accordion.Toggle as={Button} variant="link" eventKey="1">
-                   Contact LavaGames
-                 </Accordion.Toggle>
-               </Card.Header>
+               <CustomToggle
+                 as={Button}
+                 variant="link"
+                 eventKey="1"
+                 activeKey="1"
+               >
+                 Contact LavaGames
+               </CustomToggle>
                <Accordion.Collapse eventKey="1">
                  <Card.Body>
-                   <section className="section Contact--Section1">
-                     <div className="container Contact--Section1--Container">
-                       <div>
-                         <Content source={body} />
+                   <section className="section container">
+                     <Row>
+                       <Col>
+                         <h2>{contactTitle}</h2>
+                         <p>{contactText}</p>
                          <div className="Contact--Details">
-                           {address && (
-                             <a
-                               className="Contact--Details--Item"
-                               href={`https://www.google.com.au/maps/search/${encodeURI(
-                                 address
-                               )}`}
-                               target="_blank"
-                               rel="noopener noreferrer"
-                             >
-                               <MapPin /> {address}
-                             </a>
-                           )}
                            {phone && (
                              <a
                                className="Contact--Details--Item"
@@ -137,41 +144,30 @@ export const ContactPageTemplate = ({
                              </a>
                            )}
                          </div>
-                       </div>
-
-                       <div>
+                       </Col>
+                       <Col>
                          <Contact />
-                       </div>
-                     </div>
+                       </Col>
+                     </Row>
                    </section>
                  </Card.Body>
                </Accordion.Collapse>
              </Card>
              <Card>
-               <Card.Header>
-                 <Accordion.Toggle as={Button} variant="link" eventKey="2">
-                   LavaGames Support
-                 </Accordion.Toggle>
-               </Card.Header>
+               <CustomToggle as={Button} variant="link" eventKey="2">
+                 LavaGames Support
+               </CustomToggle>
                <Accordion.Collapse eventKey="2">
                  <Card.Body>
-                   <section className="section Contact--Section1">
-                     <div className="container Contact--Section1--Container">
-                       <div>
-                         <Content source={body} />
+                   <section className="section container">
+                     <Row>
+                       <Col>
+                         <Support />
+                       </Col>
+                       <Col>
+                         <h2>{supportTitle}</h2>
+                         <p>{supportText}</p>
                          <div className="Contact--Details">
-                           {address && (
-                             <a
-                               className="Contact--Details--Item"
-                               href={`https://www.google.com.au/maps/search/${encodeURI(
-                                 address
-                               )}`}
-                               target="_blank"
-                               rel="noopener noreferrer"
-                             >
-                               <MapPin /> {address}
-                             </a>
-                           )}
                            {phone && (
                              <a
                                className="Contact--Details--Item"
@@ -189,17 +185,13 @@ export const ContactPageTemplate = ({
                              </a>
                            )}
                          </div>
-                       </div>
-
-                       <div>
-                         <Contact />
-                       </div>
-                     </div>
+                       </Col>
+                     </Row>
                    </section>
                  </Card.Body>
                </Accordion.Collapse>
              </Card>
-           </Accordion>
+           </CustomAccordion>
          </main>
        )
 
@@ -215,19 +207,34 @@ const ContactPage = ({ data: { page } }) => (
 export default ContactPage
 
 export const pageQuery = graphql`
-  query ContactPage($id: String!) {
-    page: markdownRemark(id: { eq: $id }) {
-      ...Meta
-      html
-      frontmatter {
-        title
-        template
-        subtitle
-        featuredImage
-        address
-        phone
-        email
-      }
-    }
-  }
-`
+         query ContactPage($id: String!) {
+           page: markdownRemark(id: { eq: $id }) {
+             ...Meta
+             html
+             frontmatter {
+               title
+               template
+               subtitle
+               featuredImage
+               showFeaturedImage
+               showVideoBanner
+               video
+               videoPoster
+               videoTitle
+               showSlideShow
+               slides {
+                 image
+                 title
+               }
+               contributeTitle
+               contributeText
+               contactTitle
+               contactText
+               supportTitle
+               supportText
+               phone
+               email
+             }
+           }
+         }
+       `
