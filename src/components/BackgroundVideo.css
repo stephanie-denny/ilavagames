@@ -3,6 +3,11 @@
   overflow: hidden;
   height: 55rem;
 }
+
+.BackgroundVideo-section.error {
+  height: 70rem;
+}
+
 .BackgroundVideo {
   display: block;
   position: absolute;
