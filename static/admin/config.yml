@@ -218,10 +218,20 @@ collections: # A list of collections the CMS should be able to edit
             name: slides
             widget: 'list'
             required: true
-            allow_add: false
+            allow_add: true
             fields:
               - { label: 'Image', name: image, widget: image }
               - { label: 'Title', name: 'title', widget: string, default: '' }
+          - label: Featured Cards
+            name: featuredCards
+            widget: 'list'
+            required: true
+            allow_add: true
+            fields:
+              - { label: 'Image', name: image, widget: image }
+              - { label: 'Title', name: 'title', widget: string, default: '' }
+              - { label: 'Text', name: 'text', widget: string, default: '' }
+              - { label: 'Link', name: 'link', widget: string, default: '' }
           - label: 'About'
             name: 'about'
             widget: 'object'

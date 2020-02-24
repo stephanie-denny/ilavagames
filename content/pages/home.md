@@ -17,6 +17,23 @@ slides:
     title: Challenge Accepted
   - image: 'https://ucarecdn.com/848bbb48-51ee-476d-b1ef-035e91ef122e/switch.jpg'
     title: Challenge Accepted
+featuredCards:
+  - image: 'https://ucarecdn.com/2fdee313-7fed-4ff9-8621-c02d54b6bf8c/'
+    title: Card Title
+    text: Donec ullamcorper nulla non metus auctor fringilla. Curabitur blandit tempus porttitor.
+    link: '/games'
+  - image: 'https://ucarecdn.com/2fdee313-7fed-4ff9-8621-c02d54b6bf8c/'
+    title: Card Title
+    text: Donec ullamcorper nulla non metus auctor fringilla. Curabitur blandit tempus porttitor.
+    link: '/games'
+  - image: 'https://ucarecdn.com/2fdee313-7fed-4ff9-8621-c02d54b6bf8c/'
+    title: Hello
+    text: Donec ullamcorper nulla non metus auctor fringilla. Curabitur blandit tempus porttitor.
+    link: '/games'
+  - image: 'https://ucarecdn.com/2fdee313-7fed-4ff9-8621-c02d54b6bf8c/'
+    title: Card Title
+    text: Donec ullamcorper nulla non metus auctor fringilla. Curabitur blandit tempus porttitor.
+    link: '/games'
 about:
   title: 'About LavaGames'
   subtitle: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula.'

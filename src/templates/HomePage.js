@@ -8,6 +8,7 @@ import BackgroundVideo from '../components/BackgroundVideo'
 import Slideshow from '../components/Slideshow'
 import AboutSection from '../components/AboutSection'
 import PostSection from '../components/PostSection'
+import FeaturedCards from '../components/FeaturedCards'
 import Content from '../components/Content'
 import Layout from '../components/Layout'
 
@@ -50,6 +51,7 @@ export const HomePageTemplate = ({
          featuredImage,
          showFeaturedImage,
          showSlideShow,
+         featuredCards,
          about,
          body,
          posts = [],
@@ -110,7 +112,8 @@ export const HomePageTemplate = ({
                  ) : (
                    ''
                  )}
-                 {about ? <AboutSection about={about} /> : ''}
+                 {featuredCards && (<FeaturedCards cards={featuredCards} />)}
+                 {about && (<AboutSection about={about} />)}
                  {showBlogPosts && !!posts.length && (
                    <section className="section">
                      <div className="container">
@@ -121,10 +124,9 @@ export const HomePageTemplate = ({
                          posts={filteredPosts}
                        />
                        <div className="text-center">
-                       <Link to="/blog" className="Button secondary mt-5">
-                         Read More
-                       </Link>
-
+                         <Link to="/blog" className="Button secondary mt-5">
+                           Read More
+                         </Link>
                        </div>
                      </div>
                    </section>
@@ -189,6 +191,12 @@ export const pageQuery = graphql`
                video
                videoPoster
                videoTitle
+               featuredCards{
+                 image
+                 title
+                 text
+                 link
+               }
                about {
                  title
                  subtitle
