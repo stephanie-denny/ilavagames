@@ -14,9 +14,11 @@ const AboutSection = ({ about }) => {
             <h2>{about.title}</h2>
             <p>{about.subtitle}</p>
             <p>{about.text}</p>
-            <Link to="/about" className="Button secondary">
-              More About Lava Games
-            </Link>
+            {!!about.showButton && (
+              <Link to="/about" className="Button secondary">
+                More About Lava Games
+              </Link>
+            )}
           </Col>
           <Col className="col-12 col-md-6">
             <img src={about.image} alt="" className="img-fluid" />
