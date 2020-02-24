@@ -51,6 +51,7 @@ export const HomePageTemplate = ({
          featuredImage,
          showFeaturedImage,
          showSlideShow,
+         featuredCardsTitle,
          featuredCards,
          about,
          body,
@@ -112,8 +113,20 @@ export const HomePageTemplate = ({
                  ) : (
                    ''
                  )}
-                 {featuredCards && (<FeaturedCards cards={featuredCards} />)}
-                 {about && (<AboutSection about={about} />)}
+                 {featuredCards && (
+                   <FeaturedCards
+                     cards={featuredCards}
+                     title={featuredCardsTitle}
+                   />
+                 )}
+                 {about && <AboutSection about={about} />}
+                 {!!body.length && (
+                   <section className="section">
+                     <div className="container">
+                       <Content source={body} />
+                     </div>
+                   </section>
+                 )}
                  {showBlogPosts && !!posts.length && (
                    <section className="section">
                      <div className="container">
@@ -128,13 +141,6 @@ export const HomePageTemplate = ({
                            Read More
                          </Link>
                        </div>
-                     </div>
-                   </section>
-                 )}
-                 {!!body.length && (
-                   <section className="section">
-                     <div className="container">
-                       <Content source={body} />
                      </div>
                    </section>
                  )}
@@ -191,6 +197,7 @@ export const pageQuery = graphql`
                video
                videoPoster
                videoTitle
+               featuredCardsTitle
                featuredCards{
                  image
                  title
@@ -202,6 +209,7 @@ export const pageQuery = graphql`
                  subtitle
                  text
                  image
+                 showButton
                }
                showBlogPosts
              }

@@ -82,6 +82,13 @@ h6 {
   -webkit-font-smoothing: antialiased;
 }
 
+h2 {
+  font-size: 2em;
+}
+h3 {
+  font-size: 1.5em;
+}
+
 pre {
   background: var(--lightGrey);
   line-height: 1.45;
@@ -167,7 +174,7 @@ blockquote {
 
 .section {
   width: 100%;
-  padding: 5rem 0;
+  padding: 10rem 0;
 }
 .section:last-child {
   border: 0;

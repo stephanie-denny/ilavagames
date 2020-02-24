@@ -222,6 +222,7 @@ collections: # A list of collections the CMS should be able to edit
             fields:
               - { label: 'Image', name: image, widget: image }
               - { label: 'Title', name: 'title', widget: string, default: '' }
+          - { label: 'Featured Cards Title', name: 'featuredCardsTitle', widget: string, default: '' }
           - label: Featured Cards
             name: featuredCards
             widget: 'list'
