@@ -25,6 +25,11 @@
   font-size: 2em;
 }
 
+.page-not-found a {
+  text-decoration: underline;
+  color: var(--secondary);
+}
+
 @keyframes bg-glitch {
   0% {
     background-position: 0 2px;
