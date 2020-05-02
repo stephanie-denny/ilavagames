@@ -404,8 +404,6 @@ collections: # A list of collections the CMS should be able to edit
               widget: text,
               required: false,
             }
-          - { label: 404 Video Poster, name: errorVideoPoster, widget: image, required: false }
-          - { label: 404 Video, name: errorVideo, widget: string, required: false }
           - label: Social Media Card
             name: socialMediaCard
             widget: object

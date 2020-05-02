@@ -1,0 +1,109 @@
+.page-not-found {
+  background: #444;
+  background-image: repeating-linear-gradient(
+    #0c1c30,
+    #0c1c30 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  background-color: #000b1e;
+  background-size: 8px 8px;
+  animation: bg-glitch 5s infinite alternate;
+  padding: 20rem 0 15rem;
+}
+.page-not-found h1 {
+  outline: 0;
+  font-size: 98px;
+  color: #fff;
+  text-align: center;
+  text-shadow: -1px 1px 0 #e123ff, 1px -1px 0 #4d7fff,
+    0 0 9px rgba(255, 255, 255, 1);
+  animation: text-glow 2s infinite alternate ease-in-out;
+}
+
+.page-not-found p {
+  font-size: 2em;
+}
+
+@keyframes bg-glitch {
+  0% {
+    background-position: 0 2px;
+  }
+  70% {
+    background-color: #000b1e;
+  }
+  98% {
+    background-position: 0 2px;
+  }
+  99% {
+    background-position: 0 1px;
+  }
+  100% {
+    background-position: 0 3px;
+    background-color: lighten(#000b1e, 2%);
+  }
+}
+
+@keyframes text-glow {
+  66% {
+    text-shadow: -1px 1px 0 #e123ff, 1px -1px 0 #4d7fff,
+      0 0 9px rgba(255, 255, 255, 1);
+  }
+  68% {
+    text-shadow: -2px 2px 0 #e123ff, 2px -2px 0 #4d7fff,
+      0 0 9px rgba(255, 255, 255, 1);
+  }
+  70% {
+    opacity: 1;
+    text-shadow: -1px 1px 0 #e123ff, 1px -1px 0 #4d7fff,
+      0 0 9px rgba(255, 255, 255, 1);
+  }
+  71% {
+    opacity: 0.6;
+  }
+  72% {
+    opacity: 1;
+  }
+  79% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.6;
+  }
+  81% {
+    opacity: 1;
+  }
+  83% {
+    opacity: 1;
+  }
+  84% {
+    opacity: 0.6;
+  }
+  85% {
+    opacity: 1;
+    text-shadow: -1px 1px 0 #e123ff, 1px -1px 0 #4d7fff,
+      0 0 9px rgba(255, 255, 255, 1);
+  }
+  100% {
+    text-shadow: -1px 1px 0 #e123ff, 1px -1px 0 #4d7fff,
+      0 0 14px rgba(255, 255, 255, 1);
+  }
+}
+
+.soon {
+  margin-top: 10vh;
+  display: inline-block;
+  font-size: 110px;
+  font-weight: bold;
+  transform: rotate(90deg);
+  animation: my-current-thought-patterns 8s 1 ease-in-out;
+}
+
+@keyframes my-current-thought-patterns {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(0deg);
+  }
+}

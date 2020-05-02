@@ -15,7 +15,6 @@ import './globalStyles.css'
 
 
 export default ({ children, meta, title }) => {
-  const url = typeof window !== 'undefined' ? window.location.pathname : '';
   return (
     <StaticQuery
       query={graphql`
@@ -62,6 +61,14 @@ export default ({ children, meta, title }) => {
               : false
           }
 
+          const url = typeof window !== 'undefined' ? window.location.pathname : '';
+          let marketingSection;
+          if(url === '/contact/' || url ==='/404'){
+            marketingSection = ''
+          } else {
+            marketingSection =  <MarketingSection marketing={marketing} />
+          }
+
         return (
           <Fragment>
             <Helmet
@@ -95,9 +102,7 @@ export default ({ children, meta, title }) => {
             <Nav subNav={subNav} />
 
             <Fragment>{children}</Fragment>
-            {url !== '/contact/' && (
-              <MarketingSection marketing={marketing} />
-            )}
+            {marketingSection}
             <div role="complementary">
               <ScrollUpButton />
             </div>
